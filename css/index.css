@@ -7,7 +7,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 20px;
-    justify-items: center;
+    margin-top: 20px;
+    justify-content: center;
     align-items: center;
 }

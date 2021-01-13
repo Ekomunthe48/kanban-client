@@ -8,13 +8,48 @@
     <title>Kanba - App</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="https://www.pngfind.com/pngs/m/19-196250_shia-labeouf-squat-just-do-it-shia-labeouf.png" alt="" width="30" height="24" class="d-inline-block align-top">
+                Kanban-Todo
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
     <div class="container">
         <!-- Content here -->
-        <div class="col-md-3" style="background-color: red; color: white;">Test 1</div>
-        <div class="col-md-3" style="background-color: blue; color: white;">Test 2</div>
-        <div class="col-md-3" style="background-color: orange; color: white;">Test 3</div>
-        <div class="col-md-3" style="background-color: black; color: white;">Test 4</div>
+        <div class="col-md-3 list-todo">
+            <h3 style="background-color: red; color: white;">Back-Log</h3>
+        </div>
+        <div class="col-md-3 list-todo">
+            <h3 style="background-color: blue; color: white;">Todo</h3>
+        </div>
+        <div class="col-md-3 list-todo">
+            <h3 style="background-color: orange; color: white;">Doing</h3>
+        </div>
+        <div class="col-md-3 list-todo">
+            <h3 style="background-color: black; color: white;">Completed</h3>
+        </div>
       </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
