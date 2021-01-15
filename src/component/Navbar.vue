@@ -10,11 +10,8 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" v-if="currentPage != 'login' || currentPage != 'register'" aria-current="page">Welcome Pana</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" v-if="currentPage != 'login' || currentPage != 'register'" href="#">Log Out</a>
+              <li class="nav-item" v-if="currentPage='home'">
+                <a class="nav-link" @click.prevent="logout" href="#">Log Out</a>
               </li>
             </ul>
           </div>
@@ -24,7 +21,12 @@
 
 <script>
 export default {
-    name: "Navbar"
+    name: "Navbar",
+    methods: {
+      logout() {
+        this.$emit('logout')
+      }
+    }
 }
 </script>
 

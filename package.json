@@ -19,11 +19,14 @@
   "homepage": "https://github.com/Ekomunthe48/kanban-client#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "sweetalert2": "^10.13.0",
     "vue": "^2.6.12",
+    "vue-google-oauth2": "^1.5.5",
     "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.0",
+    "firebase-cli": "^1.2.0",
     "vue-template-compiler": "^2.6.12"
   }
 }

@@ -7,19 +7,18 @@
         <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Modal Header</h4>
+                    <h4 class="modal-title">Add Task</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <form>
+                <form @submit.prevent="addTask">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="inputTask" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="inputTask" aria-describedby="Title">
+                            <input v-model="title" type="text" class="form-control" id="inputTask" aria-describedby="Title">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-success btn-sm">Add Task</button>
-                        <button class="btn btn-secondary btn-sm">Cancel</button>
                     </div>
                  </form>
             </div>
@@ -31,8 +30,22 @@
 <script>
 export default {
     name: "AddTask",
-    components: {
-
+    props: [
+        "categoryId"
+    ],
+    data() {
+        return {
+            title: '',
+        }
+    },
+    methods: {
+        addTask() {
+            const obj = {
+                title: this.title,
+                categoryId: this.categoryId.id
+            }
+            return this.$emit('addTask', obj)
+        }
     }
 }
 </script>
