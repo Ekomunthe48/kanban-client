@@ -12,7 +12,7 @@
     </div>
 
     <div class="container" v-else>
-        <task-list :categories="categories" @addTask="addTask" @deleteTask="deleteTask"></task-list>
+        <task-list :categories="categories" @updateTask="updateTask" @addTask="addTask" @deleteTask="deleteTask"></task-list>
     </div>
   </div>
 </div>
@@ -185,6 +185,8 @@ export default {
       })
     },
     updateTask(payload) {
+      let id = payload.id
+      let CategoryId = payload.CategoryId
       Axios({
         method: 'PATCH',
         url: `${this.url}/tasks/${id}`,
@@ -192,10 +194,18 @@ export default {
           access_token: localStorage.access_token
         },
         data: {
-          title:
-          category
+          CategoryId
         },
       })
+      .then((result) => {
+        this.checkAuth()
+      }).catch((err) => {
+        Swal.fire({
+            icon: "error",
+            title: err.response.data.message,
+            showConfirmButton: false,
+          });
+      });
     },
     deleteTask(id) {
       Axios({

@@ -9,8 +9,8 @@
                         <span id="moveCategory" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle icon-act" >
                             <i class="fa fa-arrows"></i>
                         </span>
-                        <div aria-labelledby="moveCategory" class="dropdown-menu dropdown-menu-right user-div-menu">
-                        <span class="dropdown-item move">Move to {{categoryName.category}}</span>
+                        <div aria-labelledby="moveCategory" class="dropdown-menu dropdown-menu-right user-div-menu" >
+                        <span class="dropdown-item move" v-for="category in categories" :key="category.id" @updateTask="updateTask">Move to {{category.category}}</span>
                         </div>
                     </div>
                 </div>
@@ -24,11 +24,14 @@ export default {
     name: "TaskCard",
     props: [
         "task",
-        "categoryName"
+        "categories"
     ],
     methods: {
         deleteTask(id) {
             return this.$emit('deleteTask', id);
+        },
+        updateTask(CategoryId) {
+            return this.$emit('updateTask', CategoryId);
         }
     }
 }

@@ -6,11 +6,12 @@
     :key="category.id">
         <h3 style="background-color: red; color: white;">{{ category.category }}</h3>
         <task-card
-        :categoryName="category"
+        :categories="categories"
         :task="task"
         v-for="task in category.Tasks"
         :key="task.id"
-        @deleteTask="deleteTask"></task-card>
+        @deleteTask="deleteTask"
+        @updateTask="updateTask"></task-card>
         <add-task :categoryId="category" @addTask="addTask"></add-task>
     </div>
 </div>
@@ -36,6 +37,9 @@ export default {
         },
         deleteTask(payload) {
             return this.$emit('deleteTask', payload)
+        },
+        updateTask(payload) {
+            return this.$emit('updateTask', payload)
         }
     }
 }

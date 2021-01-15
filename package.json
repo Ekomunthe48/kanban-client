@@ -27,6 +27,7 @@
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.0",
     "firebase-cli": "^1.2.0",
+    "firebase-tools": "^9.2.0",
     "vue-template-compiler": "^2.6.12"
   }
 }
