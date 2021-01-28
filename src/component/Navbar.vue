@@ -10,8 +10,8 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item" v-if="currentPage='home'">
-                <a class="nav-link" @click.prevent="logout" href="#">Log Out</a>
+              <li class="nav-item">
+                <a class="nav-link" v-if="currentPage !== 'login'" @click.prevent="logout" href="#">Log Out</a>
               </li>
             </ul>
           </div>

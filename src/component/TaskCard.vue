@@ -10,7 +10,7 @@
                             <i class="fa fa-arrows"></i>
                         </span>
                         <div aria-labelledby="moveCategory" class="dropdown-menu dropdown-menu-right user-div-menu" >
-                        <span class="dropdown-item move" v-for="category in categories" :key="category.id" @updateTask="updateTask">Move to {{category.category}}</span>
+                        <span class="dropdown-item move" v-for="category in categories" :key="category.id" @click.prevent="updateTask(category.id, task.id)" @updateTask="updateTask">Move to {{category.category}}</span>
                         </div>
                     </div>
                 </div>
@@ -30,8 +30,12 @@ export default {
         deleteTask(id) {
             return this.$emit('deleteTask', id);
         },
-        updateTask(CategoryId) {
-            return this.$emit('updateTask', CategoryId);
+        updateTask(CategoryId, id) {
+            const obj = {
+                id,
+                CategoryId
+            }
+            return this.$emit('updateTask', obj);
         }
     }
 }

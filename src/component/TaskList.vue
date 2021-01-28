@@ -7,9 +7,9 @@
         <h3 style="background-color: red; color: white;">{{ category.category }}</h3>
         <task-card
         :categories="categories"
-        :task="task"
         v-for="task in category.Tasks"
         :key="task.id"
+        :task="task"
         @deleteTask="deleteTask"
         @updateTask="updateTask"></task-card>
         <add-task :categoryId="category" @addTask="addTask"></add-task>

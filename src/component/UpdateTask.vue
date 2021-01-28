@@ -8,10 +8,6 @@
             <i class="fa fa-arrows"></i>
         </span>
         <div aria-labelledby="moveCategory" class="dropdown-menu dropdown-menu-right user-div-menu">
-
-        <span class="dropdown-item move">Move to Todo</span>
-        <span class="dropdown-item move">Move to Done</span>
-        <span class="dropdown-item move">Move to Completed</span>
         </div>
     </div>
 </template>

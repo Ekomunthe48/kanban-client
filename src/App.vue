@@ -185,6 +185,7 @@ export default {
       })
     },
     updateTask(payload) {
+      console.log(payload);
       let id = payload.id
       let CategoryId = payload.CategoryId
       Axios({
