@@ -1,6 +1,6 @@
 <template>
 <div>
-  <navbar :categories="categories" @logout="logout"></navbar>
+  <navbar :currentPage="currentPage" :categories="categories" @logout="logout"></navbar>
   <div class="container">
 
     <div v-if="currentPage == 'login'">
