@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <form @submit.prevent="register">
+        <form @submit.prevent="register" class="form">
           <h2>Register</h2>
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -16,10 +16,10 @@
           </div>
           <div class="row mb-3">
               <div class="col-auto">
-                  <a href="#" class="fs-6 mb-3" @click.prevent="loginForm">Already have Account ? Login Now</a>
+                  <a href="#" class="fs-6 mb-3 text" @click.prevent="loginForm">Already have Account ? Login Now</a>
               </div>
           </div>
-          <button type="submit" class="btn btn-primary">Register</button>
+          <button type="submit" class="btn btn-dark">Register</button>
         </form>
     </div>
 </template>
@@ -51,5 +51,18 @@ export default {
 </script>
 
 <style>
-
+  .form {
+    border: 1px black solid;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(17, 14, 12, 0.37);
+    color: white;
+  }
+  .text{
+    color: white;
+    text-decoration: none;
+  }
+  .text:hover{
+    color: white;
+  }
 </style>

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add New Todo</button>
+    <button type="button" class="btn btn-info btn-lg buttonAdd" data-toggle="modal" data-target="#myModal">Add New Todo</button>
         <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">

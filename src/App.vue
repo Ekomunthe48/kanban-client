@@ -12,7 +12,7 @@
     </div>
 
     <div class="container" v-else>
-        <task-list :categories="categories" @updateTask="updateTask" @addTask="addTask" @deleteTask="deleteTask"></task-list>
+        <task-list :categories="categories" @editTask="editTask" @updateTask="updateTask" @addTask="addTask" @deleteTask="deleteTask"></task-list>
     </div>
   </div>
 </div>
@@ -66,6 +66,10 @@ export default {
       })
       .then(res => {
         localStorage.setItem('access_token', res.data.access_token) ;
+        Swal.fire({
+          icon: "success",
+          title: "Success Login"
+        });
         this.currentPage = 'home'
         this.checkAuth()
       })
@@ -94,6 +98,10 @@ export default {
       })
       .then(res => {
           console.log(res.data);
+          Swal.fire({
+            icon: "success",
+            title: "Success Register"
+          });
           this.checkAuth()
       })
       .catch(err => {
@@ -116,12 +124,16 @@ export default {
             method: 'POST',
             url: `${this.url}/loginGoogle`,
             data:{
-              id_token: GoogleUser.Bc.id_token
+              id_token: GoogleUser.uc.id_token
             }
           })
           .then((response) => {
             console.log(response);
             localStorage.setItem('access_token', response.data.access_token)
+            Swal.fire({
+              icon: "success",
+              title: "Success Login With Google"
+            });
             this.currentPage = 'home'
             this.checkAuth()
           }).catch((err) => {
@@ -174,6 +186,10 @@ export default {
         }
       })
       .then(res => {
+          Swal.fire({
+            icon: "success",
+            title: "Success Add Task"
+          });
           this.checkAuth()
       })
       .catch(err => {
@@ -199,6 +215,38 @@ export default {
         },
       })
       .then((result) => {
+          Swal.fire({
+            icon: "success",
+            title: "Success Update"
+          });
+        this.checkAuth()
+      }).catch((err) => {
+        Swal.fire({
+            icon: "error",
+            title: err.response.data.message,
+            showConfirmButton: false,
+          });
+      });
+    },
+    editTask(payload) {
+      console.log(payload);
+      let id = payload.id
+      let title = payload.title
+      Axios({
+        method: 'PUT',
+        url: `${this.url}/tasks/${id}`,
+        headers: {
+          access_token: localStorage.access_token
+        },
+        data: {
+          title
+        },
+      })
+      .then((result) => {
+         Swal.fire({
+            icon: "success",
+            title: "Success Update"
+          });
         this.checkAuth()
       }).catch((err) => {
         Swal.fire({
@@ -218,6 +266,10 @@ export default {
       })
       .then(res => {
         console.log(res.data)
+        Swal.fire({
+          icon: "success",
+          title: "Success Delete Data"
+        });
         this.checkAuth
       })
       .catch(err => {

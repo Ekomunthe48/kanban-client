@@ -1,5 +1,5 @@
 <template>
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="https://www.pngfind.com/pngs/m/19-196250_shia-labeouf-squat-just-do-it-shia-labeouf.png" alt="" width="30" height="24" class="d-inline-block align-top">
@@ -31,5 +31,7 @@ export default {
 </script>
 
 <style>
-
+  .navbar {
+    background: none;
+  }
 </style>
